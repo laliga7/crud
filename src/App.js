@@ -9,13 +9,13 @@ function App() {
   const [username, setUsername] = useState("");
 
   useEffect(() =>{
-    Axios.get("https://rococo-dango-d1c66a.netlify.app/getUsers").then((response) =>{
+    Axios.get("https://create-read-update-delete.herokuapp.com/getUsers").then((response) =>{
       setListOfUsers(response.data);
     });
   }, []); 
 
 const createUser =  () => {
-  Axios.post("https://rococo-dango-d1c66a.netlify.app/createUser" ,{
+  Axios.post("https://create-read-update-delete.herokuapp.com/createUser" ,{
     name: name, 
     age: age,
     username: username,}).then((response)=>{
